@@ -2,7 +2,7 @@
 using DotNetCoreSqlDb.Data;
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
 
 // Add database context and cache
 if (builder.Environment.IsDevelopment())
